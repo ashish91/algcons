@@ -15,14 +15,14 @@ class TestClass {
             sample = line.split(" ");
             n = new BigInteger(sample[0]);
             k = new BigInteger(sample[1]);
-            
+
             sum = n.multiply(n.add(BigInteger.valueOf(1))).divide(BigInteger.valueOf(2));
             while(k.compareTo(sum) == 1) {
                 k = k.subtract(sum);
             }
-            
+
             System.out.println(sum.subtract(k));
-            
+
         }
 
     }
