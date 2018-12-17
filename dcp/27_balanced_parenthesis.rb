@@ -8,22 +8,22 @@ stack = []
 balanced = true
 
 brackets.each_char do |c|
-	if [ '{', '(', '[' ].include?(c)
-		stack.push(c)
-	else
-		case c
-			when '}'
-				balanced = false unless stack.last == '{' 
-			when ')'
-				balanced = false unless stack.last == '('
-			when ']'
-				balanced = false unless stack.last == '[' 
-			else
-				balanced = false
-		end
-		stack.pop
-	end
-	break unless balanced
+  if [ '{', '(', '[' ].include?(c)
+    stack.push(c)
+  else
+    case c
+      when '}'
+        balanced = false unless stack.last == '{' 
+      when ')'
+        balanced = false unless stack.last == '('
+      when ']'
+        balanced = false unless stack.last == '[' 
+      else
+        balanced = false
+    end
+    stack.pop
+  end
+  break unless balanced
 end
 
 puts balanced && stack.empty?
