@@ -18,12 +18,12 @@ function longestSubstringNonRepeating(s) {
 
 	while (ending < s.length) {
 		if (seenCharacters[s[ending]] >= 0) {
-			// Found a repeating character.
-			// Increment s so that the character only appears once.
+			// Update the index to the last occurrence of the character
+			// if it's greater than current begin position.
 			begin = Math.max(begin, seenCharacters[s[ending]] + 1) ;
 		}
 
-		longestSubstring = longestSubstring > (ending - begin + 1) ? longestSubstring : (ending - begin + 1);
+		longestSubstring = Math.max(longestSubstring, (ending - begin + 1));
 		seenCharacters[s[ending]] = ending;
 	
 		ending++;
