@@ -1,3 +1,4 @@
+
 /**
  * @param {character[][]} grid
  * @return {number}
@@ -15,6 +16,10 @@ var markOnes = function(grid, row, col, rowsize, colsize) {
 }
 
 var numIslands = function(grid) {
+    if (grid.length == 0) {
+        return 0;
+    }
+    
   var colsize = 0, rowsize = 0, islands = 0;
   for (let i = 0; i < grid[0].length; i++) {
     colsize++;
